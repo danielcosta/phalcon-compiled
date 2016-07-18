@@ -1,12 +1,5 @@
-#!/bin/bash
-cd /tmp/ \
-&& apt update \
-&& apt install -y git curl \
-&& php -r "readfile('https://getcomposer.org/installer');" > composer-setup.php \
-&& php -r "if (hash('SHA384', file_get_contents('composer-setup.php')) . PHP_EOL === file_get_contents('https://composer.github.io/installer.sig')) { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;" \
-&& php composer-setup.php \
-&& php -r "unlink('composer-setup.php');" \
-&& mv composer.phar /usr/local/bin/composer \
+#!/bin/sh
+apk add --no-cache git bash make re2c gcc autoconf pcre-dev \
 && cd /usr/local/lib/ \
 && git clone --depth=1 https://github.com/phalcon/zephir.git \
 && cd /usr/local/lib/zephir \
