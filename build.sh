@@ -1,5 +1,5 @@
 #!/bin/sh
-apk add --no-cache git bash make re2c gcc autoconf pcre-dev \
+apk add --no-cache git bash re2c build-base autoconf pcre-dev \
 && cd /usr/local/lib/ \
 && git clone --depth=1 https://github.com/phalcon/zephir.git \
 && cd /usr/local/lib/zephir \
